@@ -1,0 +1,456 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechNova | Future of Technology</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #0b1120;
+            color: white;
+            transition: 0.3s;
+        }
+
+        /* Navbar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: #111a2e;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: bold;
+            color: #38bdf8;
+        }
+
+        .logo span {
+            color: white;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #38bdf8;
+        }
+
+        .theme-btn {
+            background: #38bdf8;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 60px 8%;
+            gap: 40px;
+        }
+
+        .hero-content {
+            max-width: 600px;
+        }
+
+        .hero h1 {
+            font-size: 55px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #38bdf8;
+        }
+
+        .hero p {
+            color: #b8c4d9;
+            font-size: 18px;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #38bdf8;
+            color: #07111f;
+            padding: 14px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            background: #7dd3fc;
+        }
+
+        .hero-image {
+            font-size: 180px;
+            text-align: center;
+            animation: float 3s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        /* Technology Section */
+        .section {
+            padding: 80px 8%;
+            text-align: center;
+        }
+
+        .section h2 {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .section h2 span {
+            color: #38bdf8;
+        }
+
+        .section-description {
+            color: #b8c4d9;
+            margin-bottom: 50px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: #111a2e;
+            padding: 35px 25px;
+            border-radius: 15px;
+            border: 1px solid #263650;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: #38bdf8;
+            box-shadow: 0 10px 30px #0005;
+        }
+
+        .card .icon {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            margin-bottom: 15px;
+            color: #38bdf8;
+        }
+
+        .card p {
+            color: #b8c4d9;
+            line-height: 1.6;
+        }
+
+        /* About Section */
+        .about {
+            background: #111a2e;
+            padding: 70px 8%;
+            text-align: center;
+        }
+
+        .about h2 {
+            font-size: 35px;
+            margin-bottom: 20px;
+        }
+
+        .about p {
+            max-width: 750px;
+            margin: auto;
+            color: #b8c4d9;
+            line-height: 1.8;
+        }
+
+        /* Contact */
+        .contact {
+            padding: 80px 8%;
+            text-align: center;
+        }
+
+        .contact p {
+            color: #b8c4d9;
+            margin: 20px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #111a2e;
+            color: #b8c4d9;
+        }
+
+        /* Light Mode */
+        body.light {
+            background: #f1f5f9;
+            color: #0f172a;
+        }
+
+        body.light nav,
+        body.light .card,
+        body.light .about,
+        body.light footer {
+            background: #ffffff;
+        }
+
+        body.light nav a {
+            color: #0f172a;
+        }
+
+        body.light .logo span {
+            color: #0f172a;
+        }
+
+        body.light .hero p,
+        body.light .card p,
+        body.light .section-description,
+        body.light .about p,
+        body.light .contact p {
+            color: #475569;
+        }
+
+        body.light .card {
+            border-color: #cbd5e1;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            nav {
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                font-size: 14px;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .hero-image {
+                font-size: 100px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .section h2 {
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">Tech<span>Nova</span></div>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#technology">Technology</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <button class="theme-btn" onclick="toggleTheme()">
+            🌙 Theme
+        </button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+            <h1>
+                Explore the <span>Future</span> of Technology
+            </h1>
+
+            <p>
+                Discover the latest innovations in Artificial Intelligence,
+                Cloud Computing, Web Development and modern technology.
+                Build your future with powerful digital solutions.
+            </p>
+
+            <a href="#technology" class="btn">
+                Explore Technology →
+            </a>
+        </div>
+
+        <div class="hero-image">
+            💻
+        </div>
+
+    </section>
+
+    <!-- Technology Section -->
+    <section class="section" id="technology">
+
+        <h2>Our <span>Technologies</span></h2>
+
+        <p class="section-description">
+            Discover the technologies shaping our digital future.
+        </p>
+
+        <div class="cards">
+
+            <div class="card">
+                <div class="icon">☁️</div>
+                <h3>Cloud Computing</h3>
+                <p>
+                    Learn how cloud platforms provide scalable,
+                    secure and reliable computing infrastructure.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🤖</div>
+                <h3>Artificial Intelligence</h3>
+                <p>
+                    Explore AI, machine learning and intelligent
+                    systems transforming the world.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🚀</div>
+                <h3>DevOps</h3>
+                <p>
+                    Automate software development and deployment
+                    using modern DevOps tools and practices.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🌐</div>
+                <h3>Web Development</h3>
+                <p>
+                    Create beautiful and responsive websites
+                    using HTML, CSS and JavaScript.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🔐</div>
+                <h3>Cyber Security</h3>
+                <p>
+                    Protect applications, networks and data
+                    from digital threats.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🐳</div>
+                <h3>Docker & Kubernetes</h3>
+                <p>
+                    Build, manage and scale containerized
+                    applications efficiently.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+
+        <h2>About <span style="color:#38bdf8">TechNova</span></h2>
+
+        <p>
+            TechNova is a technology-focused platform designed to
+            inspire learners, developers and technology enthusiasts.
+            Our mission is to make modern technology simple,
+            accessible and useful for everyone.
+        </p>
+
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+
+        <h2>Let's Connect</h2>
+
+        <p>
+            Interested in technology? Start your journey today.
+        </p>
+
+        <a href="mailto:hello@technova.com" class="btn">
+            Contact Us
+        </a>
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>
+            © 2026 TechNova | Built with HTML, CSS & JavaScript
+        </p>
+    </footer>
+
+    <script>
+        function toggleTheme() {
+            document.body.classList.toggle("light");
+
+            const button = document.querySelector(".theme-btn");
+
+            if (document.body.classList.contains("light")) {
+                button.innerHTML = "☀️ Theme";
+            } else {
+                button.innerHTML = "🌙 Theme";
+            }
+        }
+    </script>
+
+</body>
+</html>
